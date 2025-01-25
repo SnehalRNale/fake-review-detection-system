@@ -22,6 +22,11 @@ tokenizer = pickle.load(open("Data\\tokenized\\tokenizer.pkl", "rb"))
 def main_page():
     return render_template("index.html")
 
+# register page
+@app.route('/register')
+def register_page():
+    return render_template('register.html')
+
 # login page
 @app.route('/login', methods=['GET', 'POST'])
 def login_page():
