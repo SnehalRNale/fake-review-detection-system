@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake Review Detector - Home</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(120deg, #c9d6ff, #e2a8f7);
+      overflow-x: hidden;
+    }
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #333c73;
+      padding: 1rem 2rem;
+      color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+  
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: color 0.3s;
+    }
+  
+    .navbar a:hover {
+      color: #d1d5db;
+    }
+  
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: 100vh;
+      background: linear-gradient(180deg, rgba(74, 144, 226, 0.8), rgba(168, 71, 186, 0.5)), url('https://source.unsplash.com/1600x900/?ai,technology') no-repeat center center/cover;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    }
+  
+    .hero-content {
+      max-width: 700px;
+      /* background: rgba(0, 0, 0, 0.4); */
+      padding: 2rem;
+      border-radius: 15px;
+      animation: fadeIn 1.5s ease-out;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .hero h1 {
+    font-size: 4rem;  /* Slightly increased font size for better clarity */
+    font-family: 'Montserrat', sans-serif;  /* A sharper, modern sans-serif font */
+    margin-bottom: 1.5rem;
+    background: -webkit-linear-gradient(#4a90e2, #8a2be2);  /* Slightly modified gradient for clarity */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;  /* Added text transform for a more polished, sharp appearance */
+    font-weight: 700;  /* Bold text to increase clarity */
+  }
+    .hero p {
+      font-size: 1.4rem;
+      margin-bottom: 2rem;
+      color: #e5e7eb;
+    }
+  
+    .cta {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: #7e82ff;
+      color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background 0.3s, transform 0.3s;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+  
+    .cta:hover {
+      background: #6435b5;
+      transform: scale(1.1);
+    }
+  
+    .cta:active {
+      transform: scale(1.05);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+  
+  
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Fake Review Detector</div>
+    <nav>
+      <a href="{{ url_for('main_page') }}">Home</a>
+      <a href="{{ url_for('about_page') }}">About Us</a>
+      <a href="{{ url_for('dashboard_page') }}">Dashboard</a>
+      <a href="{{ url_for('contact_page') }}">Contact Us</a>
+      <a href="{{ url_for('login_page') }}">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover Genuine Reviews</h1>
+      <p>Use the power of AI to distinguish between authentic and fake reviews on any platform. Join us in creating a trustworthy online ecosystem.</p>
+      <a href="{{ url_for('review_page') }}" class="cta">Get Started</a>
+    </div>
+  </section>
+</body>
+</html>
+
+
+

@@ -1,0 +1,4 @@
+__pycache__
+venv
+LSTM.h5
+Data

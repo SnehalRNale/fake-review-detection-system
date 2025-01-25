@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            padding: 30px 20px;
+            position: fixed;
+        }
+
+        .sidebar h1 {
+            font-size: 30px;
+            color: #fff;
+            margin-bottom: 40px;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background-color: #4a90e2;
+            padding-left: 10px;
+            border-radius: 5px;
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            margin-left: 250px;
+            width: calc(100% - 250px);
+            padding: 40px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-info p {
+            margin-right: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        .user-info img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        /* Stats Section */
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+        }
+
+        .stat-box {
+            background-color: #4a90e2;
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            width: 23%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-box h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .stat-box p {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Recent Activity Section */
+        .recent-activity {
+            margin-top: 60px;
+        }
+
+        .activity-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .activity-table th, .activity-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 2px solid #ccc;
+        }
+
+        .activity-table th {
+            background-color: #4a90e2;
+            color: white;
+        }
+
+        .activity-table td {
+            font-size: 18px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h1>Dashboard</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Messages</a></li>
+            <li><a href="#">Log Out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header with user info -->
+        <div class="header">
+            <h1>Welcome Back, John Doe!</h1>
+            <div class="user-info">
+                <p>John Doe</p>
+                <img src="https://i.pinimg.com/originals/d3/14/5a/d3145ae610f758646ca19ed14c8e5707.png" alt="Profile Picture">
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="stats">
+            <div class="stat-box">
+                <h2>125</h2>
+                <p>New Users</p>
+            </div>
+            <div class="stat-box">
+                <h2>4,320</h2>
+                <p>Total Visits</p>
+            </div>
+            <div class="stat-box">
+                <h2>89%</h2>
+                <p>Conversion Rate</p>
+            </div>
+            <div class="stat-box">
+                <h2>58</h2>
+                <p>Messages</p>
+            </div>
+        </div>
+
+        <!-- Recent Activity Section -->
+        <div class="recent-activity">
+            <h2>Recent Activity</h2>
+            <table class="activity-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Activity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>January 25, 2025</td>
+                        <td>Updated User Profile</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>January 24, 2025</td>
+                        <td>Logged in as Admin</td>
+                        <td>Completed</td>
+                    </tr>
+                    <tr>
+                        <td>January 23, 2025</td>
+                        <td>Created New Post</td>
+                        <td>Pending</td>
+                    </tr>
+                    <tr>
+                        <td>January 22, 2025</td>
+                        <td>Updated Dashboard Data</td>
+                        <td>Completed</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Your Dashboard | All Rights Reserved</p>
+        </footer>
+    </div>
+
+</body>
+</html>
