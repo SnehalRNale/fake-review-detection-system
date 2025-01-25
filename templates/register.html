@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <style>
+        /* Universal Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f6d365, #fda085);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 1rem;
+        }
+
+        /* Container Styling */
+        .register-container {
+            background: white;
+            padding: 3rem;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 8px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 2rem;
+            color: #333;
+            font-size: 28px;
+        }
+
+        /* Form Styling */
+        .register-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+            margin-top: 1rem;
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"] {
+            padding: 0.8rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        input[type="email"]:focus {
+            border-color: #fda085;
+            outline: none;
+        }
+
+        button {
+            padding: 1rem;
+            margin-top: 2rem;
+            background-color: #fda085;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f6b456;
+        }
+
+        /* Success Message Styling */
+        .success-message {
+            background-color: #d4edda;
+            border-radius: 5px;
+            padding: 1rem;
+            color: green;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        /* Redirect to Login */
+        .redirect-btn {
+            margin-top: 1.5rem;
+            padding: 0.8rem;
+            background-color: #fda085;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+        }
+
+        .redirect-btn:hover {
+            background-color: #f6b456;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>Register</h2>
+        <form action="{{ url_for('register_page') }}" method="POST" id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+
+        <!-- Success Message (Hidden initially) -->
+        <div class="success-message" style="display: none;" id="successMessage">
+            <p>Registration Successful!</p>
+            <a href="{{ url_for('login_page') }}" class="redirect-btn">Go to Login</a>
+        </div>
+    </div>
+
+    <script>
+        const registerForm = document.getElementById('registerForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // When the form is submitted successfully
+        registerForm.onsubmit = function (e) {
+            e.preventDefault();
+
+            // Simulate form submission (replace this with actual form submission logic in your server)
+            setTimeout(() => {
+                // Hide the registration form
+                registerForm.style.display = 'none';
+
+                // Show success message
+                successMessage.style.display = 'block';
+            }, 500); // Simulate a delay
+        }
+    </script>
+</body>
+
+</html>
